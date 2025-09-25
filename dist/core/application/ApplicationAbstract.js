@@ -1,16 +1,22 @@
 import Application from "./Application.js";
-import express from "express";
+import express from 'express';
+import path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 class ApplicationAbstract {
+    basePath;
     module;
     controller;
-    #express;
+    expressClass;
+    express;
     constructor(configs) {
-        this.boot();
-        this.#express = express();
+        this.expressClass = express;
+        this.express = this.expressClass();
+        this.basePath = __dirname;
     }
-    boot() {
-    }
-    handle() {
+    boot() { return this; }
+    handleRequest() {
         return this;
     }
 }
