@@ -12,7 +12,6 @@ class Application extends ApplicationAbstract {
     handleRequest() {
         this.express.use((req, res, next) => {
             console.log(req.path);
-            console.log(Nyt.app.basePath);
             next();
         });
         return this;
