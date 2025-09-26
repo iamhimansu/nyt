@@ -17,6 +17,7 @@ class Router {
             let module = routeParser.getModule();
             let controller = routeParser.getController();
             let action = routeParser.getAction();
+            //Import module on the fly
             console.log(module, controller, action);
             next();
         });

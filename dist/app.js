@@ -1,5 +1,5 @@
 import Application from './core/application/Application.js';
-const configs = {};
+import configs from './config/web.js';
 const app = new Application(configs);
 globalThis.Nyt = {
     app: app
