@@ -17,7 +17,7 @@ class Router {
             let module = routeParser.getModule();
             let controller = routeParser.getController();
             let action = routeParser.getAction();
-            console.log(req.path);
+            console.log(module, controller, action);
             next();
         });
     }
